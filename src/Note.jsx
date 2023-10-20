@@ -1,6 +1,15 @@
 
 
-function Note({top, left, content, onDelete, onInput}) {
+function Note(props) {
+  let {top, left, content} = props
+  let {onDelete, onInput} = props
+  let {
+    onPointerDown,
+    onPointerUp,
+    onPointerCancel,
+    onPointerMove,
+    onTouchStart} = props
+
   return (
     <>
       <div
@@ -15,7 +24,15 @@ function Note({top, left, content, onDelete, onInput}) {
           position: "absolute",
           top: top,
           width: "250px",
-        }}>
+        }}
+
+        onPointerDown={(e) => onPointerDown(e, e.target)}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerCancel}
+        onPointerMove={onPointerMove}
+        onTouchStart={onTouchStart}
+      >
+
 
         <button
           onClick={onDelete}
