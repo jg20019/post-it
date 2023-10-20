@@ -68,6 +68,9 @@ function Note(props) {
             resize: "none",
             width: "97%",
           }}
+          onPointerDown={(e) => e.stopPropagation()}
+          onPointerUp={(e) => e.stopPropagation()}
+          onPointerMove={(e) => e.stopPropagation()}
           onInput={onInput}
           value={content}
         />
