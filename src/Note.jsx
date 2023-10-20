@@ -16,6 +16,7 @@ function Note(props) {
         style={{
           background: "darkgrey",
           borderRadius: "5px",
+          cursor: "grab",
           display: "flex",
           height: "250px",
           justifyContent: "center",
